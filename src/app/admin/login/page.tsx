@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { adminLoginAction, type AdminLoginState } from "./actions";
+import { Logo } from "@/components/logo";
 
 const initialState: AdminLoginState = {};
 
@@ -12,11 +13,12 @@ export default function AdminLoginPage() {
   );
 
   return (
-    <div className="flex flex-1 items-center justify-center px-4 py-12">
+    <div className="flex flex-1 items-center justify-center bg-zinc-50 px-4 py-12">
       <div className="w-full max-w-sm rounded-xl border border-zinc-200 bg-white p-8 shadow-sm">
+        <Logo className="mb-6" />
         <h1 className="text-2xl font-semibold text-zinc-900">Admin-Bereich</h1>
         <p className="mt-1 text-sm text-zinc-600">
-          Nur für den Betreiber von Anfragen.Business.
+          Nur für den Betreiber von Werklotse.
         </p>
 
         <form action={formAction} className="mt-6 space-y-4">
@@ -29,7 +31,7 @@ export default function AdminLoginPage() {
               name="password"
               required
               autoFocus
-              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
 
@@ -42,7 +44,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-700 disabled:opacity-60"
+            className="w-full rounded-md bg-brand-800 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-60"
           >
             {pending ? "Wird geprüft…" : "Anmelden"}
           </button>

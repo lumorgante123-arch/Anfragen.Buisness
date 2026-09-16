@@ -82,11 +82,11 @@ export async function createBusinessAction(
 
   const { success } = await sendRawEmail({
     recipient: ownerEmail,
-    subject: `Zugang zu deinem Anfragen.Business-Dashboard`,
+    subject: `Zugang zu deinem Werklotse-Dashboard`,
     body: [
       `Hallo ${ownerName},`,
       "",
-      `für ${businessName} wurde ein Dashboard bei Anfragen.Business eingerichtet.`,
+      `für ${businessName} wurde ein Dashboard bei Werklotse eingerichtet.`,
       `Lege dort dein Passwort fest, um loszulegen:`,
       "",
       inviteUrl,

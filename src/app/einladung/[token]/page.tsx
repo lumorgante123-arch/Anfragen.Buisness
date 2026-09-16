@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { AcceptInviteForm } from "./accept-invite-form";
+import { Logo } from "@/components/logo";
 
 export default async function InvitePage({
   params,
@@ -22,10 +23,11 @@ export default async function InvitePage({
   return (
     <div className="flex flex-1 items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm rounded-xl border border-zinc-200 bg-white p-8 shadow-sm">
+        <Logo className="mb-6" />
         {valid ? (
           <>
             <h1 className="text-2xl font-semibold text-zinc-900">
-              Willkommen bei Anfragen.Business
+              Willkommen bei Werklotse
             </h1>
             <p className="mt-1 text-sm text-zinc-600">
               {user!.business.name} – lege dein Passwort fest, um dein
@@ -40,8 +42,8 @@ export default async function InvitePage({
             </h1>
             <p className="mt-2 text-sm text-zinc-600">
               Dieser Einladungslink ist abgelaufen oder wurde bereits
-              verwendet. Bitte wende dich an den Betreiber von
-              Anfragen.Business für einen neuen Link.
+              verwendet. Bitte wende dich an den Betreiber von Werklotse für
+              einen neuen Link.
             </p>
           </>
         )}

@@ -1,4 +1,4 @@
-# Anfragen.Business
+# Werklotse
 
 Tool für Handwerksbetriebe: Kundenanfragen landen zentral in einem
 Dashboard, der Kunde wird automatisch benachrichtigt, und der Betrieb kann
@@ -21,18 +21,20 @@ an den Betrieb schickt:
 
 Zwei Wege, die sich kombinieren lassen:
 
-- **Formular/Widget**: Jeder Betrieb hat ein Anfrageformular unter
-  `/anfrage/[slug]`. Einbindung auf der eigenen Website per iframe oder per
-  `<script src=".../widget.js" data-slug="...">` – Code dafür steht unter
-  „Einstellungen“ im Dashboard. Absenden ruft den öffentlichen Endpunkt
-  `POST /api/public/requests` auf (CORS-offen, damit auch ein eigenes
-  Formular auf der Betriebs-Website direkt dorthin posten kann).
-- **Bestehendes Kontaktformular per E-Mail**: Läuft das alte
-  Kontaktformular des Betriebs über ein Postfach, kann der Betrieb unter
-  „Einstellungen“ IMAP-Zugangsdaten hinterlegen. Ein Hintergrundjob
-  (`src/instrumentation.ts`, alle 5 Minuten) holt neue, ungelesene E-Mails
-  ab und legt daraus automatisch Anfragen an; zusätzlich gibt es einen
-  „Jetzt synchronisieren“-Button für den sofortigen Abruf.
+- **Bestehendes Kontaktformular per E-Mail (Hauptweg)**: Läuft das
+  Kontaktformular des Betriebs über ein Postfach, hinterlegt der Betrieb
+  unter „Einstellungen“ IMAP-Zugangsdaten – an seiner Website ändert sich
+  nichts. Ein Hintergrundjob (`src/instrumentation.ts`, alle 5 Minuten)
+  holt neue, ungelesene E-Mails ab und legt daraus automatisch Anfragen an;
+  zusätzlich gibt es einen „Jetzt synchronisieren“-Button für den sofortigen
+  Abruf.
+- **Formular/Widget (optional)**: Jeder Betrieb hat zusätzlich ein
+  Anfrageformular unter `/anfrage/[slug]`. Einbindung auf der eigenen
+  Website per iframe oder per `<script src=".../widget.js" data-slug="...">`
+  – Code dafür steht unter „Einstellungen“ im Dashboard. Absenden ruft den
+  öffentlichen Endpunkt `POST /api/public/requests` auf (CORS-offen, damit
+  auch ein eigenes Formular auf der Betriebs-Website direkt dorthin posten
+  kann).
 
 In beiden Fällen bekommt der Kunde automatisch eine Bestätigungsmail mit
 einem Link zur Status-Verfolgung (`/status/[id]`), und weitere E-Mails bei

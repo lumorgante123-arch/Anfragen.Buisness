@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { loginAction, type LoginState } from "./actions";
+import { Logo } from "@/components/logo";
 
 const initialState: LoginState = {};
 
@@ -9,8 +10,9 @@ export default function LoginPage() {
   const [state, formAction, pending] = useActionState(loginAction, initialState);
 
   return (
-    <div className="flex flex-1 items-center justify-center px-4 py-12">
+    <div className="flex flex-1 items-center justify-center bg-zinc-50 px-4 py-12">
       <div className="w-full max-w-sm rounded-xl border border-zinc-200 bg-white p-8 shadow-sm">
+        <Logo className="mb-6" />
         <h1 className="text-2xl font-semibold text-zinc-900">Anmelden</h1>
         <p className="mt-1 text-sm text-zinc-600">
           Melde dich mit deinem Betriebskonto an.
@@ -25,7 +27,7 @@ export default function LoginPage() {
               type="email"
               name="email"
               required
-              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
           <div>
@@ -36,7 +38,7 @@ export default function LoginPage() {
               type="password"
               name="password"
               required
-              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
 
@@ -49,7 +51,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 disabled:opacity-60"
+            className="w-full rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600 disabled:opacity-60"
           >
             {pending ? "Wird angemeldet…" : "Anmelden"}
           </button>

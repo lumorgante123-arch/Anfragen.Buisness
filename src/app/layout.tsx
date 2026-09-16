@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anfragen.Business – Anfragen-Dashboard für Handwerksbetriebe",
+  title: "Werklotse – Anfragen-Dashboard für Handwerksbetriebe",
   description:
-    "Kundenanfragen von der Website direkt im Dashboard verwalten, Mitarbeitern zuweisen und Kunden automatisch benachrichtigen.",
+    "Kundenanfragen automatisch im Dashboard sammeln, Mitarbeitern zuweisen und Kunden automatisch benachrichtigen.",
 };
 
 export default function RootLayout({

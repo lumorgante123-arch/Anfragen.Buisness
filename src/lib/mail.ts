@@ -47,8 +47,7 @@ export async function sendRawEmail({
 
   try {
     await client.sendMail({
-      from:
-        process.env.SMTP_FROM || "Anfragen.Business <no-reply@anfragen.business>",
+      from: process.env.SMTP_FROM || "Werklotse <no-reply@werklotse.de>",
       to: recipient,
       subject,
       text: body,

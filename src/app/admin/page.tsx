@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin-auth";
 import { CreateBusinessForm } from "./create-business-form";
 import { adminLogoutAction } from "./actions";
+import { Logo } from "@/components/logo";
 
 export default async function AdminPage() {
   await requireAdmin();
@@ -18,8 +19,8 @@ export default async function AdminPage() {
     <div className="min-h-screen bg-zinc-50">
       <header className="border-b border-zinc-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <span className="text-lg font-semibold tracking-tight">
-            Anfragen<span className="text-blue-600">.Business</span>{" "}
+          <span className="flex items-center gap-2">
+            <Logo />
             <span className="text-zinc-400">/ Admin</span>
           </span>
           <form action={adminLogoutAction}>

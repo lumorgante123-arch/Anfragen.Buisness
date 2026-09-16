@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Werklotse Markenfarben: gedecktes Navy (Lotse/Vertrauen) + warmes Amber (Handwerk) */
+  --color-brand-50: #eef4fb;
+  --color-brand-100: #d7e6f4;
+  --color-brand-200: #aecbe6;
+  --color-brand-300: #7aa9d3;
+  --color-brand-400: #4d85b8;
+  --color-brand-500: #2f699d;
+  --color-brand-600: #1f5180;
+  --color-brand-700: #193f63;
+  --color-brand-800: #142f4a;
+  --color-brand-900: #0d1f32;
+
+  --color-accent-400: #f6b73c;
+  --color-accent-500: #f0a411;
+  --color-accent-600: #d0890a;
 }
 
 @theme inline {
@@ -10,6 +26,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +53,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
